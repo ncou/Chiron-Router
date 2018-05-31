@@ -1,7 +1,7 @@
 {
     "name": "chiron/chiron-router",
     "type": "library",
-    "description": "PSR7 Router based on altorouter",
+    "description": "PSR7 Router based on Altorouter",
     "keywords": ["router","psr7","altorouter","routing"],
     "homepage": "https://github.com/ncou/Chiron-Router",
     "license": "MIT",
