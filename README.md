@@ -10,6 +10,9 @@
 [![PHP-Eye](https://php-eye.com/badge/chiron/chiron-router/tested.svg?style=flat)](https://php-eye.com/package/chiron/chiron-router)
 [![PHPStan](https://img.shields.io/badge/PHPStan-enabled-brightgreen.svg?style=flat)](https://github.com/phpstan/phpstan)
 
+[![Github Issues](http://githubbadges.herokuapp.com/ncou/chiron-router/issues.svg?style=flat-square)](https://github.com/ncou/chiron-router/issues)
+[![License](http://img.shields.io/:license-mit-blue.svg?style=flat-square)](http://doge.mit-license.org)
+
 
 Chiron-Router
 ---------------
