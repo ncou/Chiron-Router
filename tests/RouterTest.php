@@ -10,7 +10,7 @@ use Chiron\Tests\Utils\HandlerProxy2;
 use PHPUnit\Framework\TestCase;
 
 /**
- * @covers \Zend\Expressive\Router\RouteResult
+ * @covers \Chiron\Routing\RouteResult
  */
 class RouterTest extends TestCase
 {
