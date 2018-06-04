@@ -14,7 +14,7 @@ namespace Chiron\Routing;
 
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
-use Psr\Http\Server\RequestHandlerInterface;
+//use Psr\Http\Server\RequestHandlerInterface;
 
 /**
  * Route class.
@@ -24,12 +24,17 @@ use Psr\Http\Server\RequestHandlerInterface;
  */
 class Route //implements RequestHandlerInterface
 {
+    /** @var array */
     private $requirements = [];
-
+    /** @var array */
     private $defaults = [];
-
+    /** @var array */
     private $schemes = [];
-
+    /** @var array */
+    private $extras = [];
+    /** @var array */
+    private $middlewares = [];
+    /** @var string */
     private $name;
 
     /**
@@ -69,23 +74,58 @@ class Route //implements RequestHandlerInterface
     public const REGEX_PATTERN = '`(/|\.|)\[([^:\]]*+)(?::([^:\]]*+))?\](\?|)`';
 
     /**
-     * @param $url
-     * @param $requestMethod
-     * @param $class
-     * @param $function
+     * @param $url string
+     * @param $handler mixed
      */
-    public function __construct(string $url, RequestHandlerInterface $handler)
+    public function __construct(string $url, $handler)
     {
         $this->url = $url;
         $this->handler = $handler;
-
-        /*
-        //TODO : ajouter ce bout de code dans la méthode allowMethods() ou directement dans la partie setMethods()
-                if (in_array('GET', $this->methods) && ! in_array('HEAD', $this->methods)) {
-                    $this->methods[] = 'HEAD';
-                }
-                */
     }
+
+    public function getExtras(): array
+    {
+        return $this->extras;
+    }
+
+    public function getExtra(string $key, $default = null)
+    {
+        if (! array_key_exists($key, $this->extras)) {
+            return $default;
+        }
+        return $this->extras[$key];
+    }
+
+    public function addExtra(string $key, $value)
+    {
+        $this->extras[$key] = $value;
+        return $this;
+    }
+
+    /**
+     * Get the middlewares registered for the group
+     *
+     * @return mixed[]
+     */
+    public function getMiddlewares(): array
+    {
+        return $this->middlewares;
+    }
+
+    /**
+     * Prepend middleware to the middleware collection
+     *
+     * @param mixed $middleware The callback routine
+     *
+     * @return static
+     */
+    public function middleware($middleware): self
+    {
+        $this->middlewares[] = $middleware;
+        return $this;
+    }
+
+
 
     // TODO ; vérifier l'utilité de cette méthode
     public function getUrl(): string
@@ -93,7 +133,8 @@ class Route //implements RequestHandlerInterface
         return $this->url;
     }
 
-    public function getHandler(): RequestHandlerInterface
+    // return : mixed
+    public function getHandler()
     {
         return $this->handler;
     }
