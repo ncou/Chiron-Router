@@ -2,6 +2,12 @@
 
 declare(strict_types=1);
 
+//https://github.com/ncou/routing-router-with-Dispatcher/blob/master/Router.php#L405
+//https://github.com/laravel/lumen-framework/blob/5.6/src/Routing/Router.php#L60
+//https://github.com/Wandu/Framework/blob/master/src/Wandu/Router/RouteCollection.php
+//https://github.com/ncou/Aura.Router/blob/3.x/src/Map.php
+//https://github.com/ncou/phroute/blob/master/src/Phroute/RouteCollector.php
+
 // TODO : créer une classe RouteResult() au lieu de retourner un tableau avec FOUNT / NOT_FOUND / METHOD_NOT_ALLOWED : https://github.com/zendframework/zend-expressive-router/blob/master/src/RouteResult.php
 
 // TODO : créer une interface : https://github.com/zendframework/zend-expressive-router/blob/master/src/RouterInterface.php
