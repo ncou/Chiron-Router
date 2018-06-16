@@ -56,7 +56,6 @@ namespace Chiron\Routing;
 // TODO : ajouter une propriété pour gérer les url de maniére non-case sensitive : https://github.com/mastacontrola/AltoRouter/blob/master/AltoRouter.php#L541
 
 use Psr\Http\Message\ServerRequestInterface;
-use Psr\Http\Server\RequestHandlerInterface;
 use RuntimeException;
 
 /**
@@ -247,8 +246,8 @@ class Router
     /**
      * Add route with multiple methods (by defaul accept any HTTP method).
      *
-     * @param string                  $pattern The route URI pattern
-     * @param mixed $handler The route callback routine
+     * @param string $pattern The route URI pattern
+     * @param mixed  $handler The route callback routine
      *
      * @return RouteInterface
      */
