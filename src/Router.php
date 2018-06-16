@@ -248,12 +248,12 @@ class Router
      * Add route with multiple methods (by defaul accept any HTTP method).
      *
      * @param string                  $pattern The route URI pattern
-     * @param RequestHandlerInterface $handler The route callback routine
+     * @param mixed $handler The route callback routine
      *
      * @return RouteInterface
      */
     // TODO : renommer cette méthode en "addRoute()" ???? et elle prendrait en paramétre directement un objet Route qui est initialisé ???? mais on ferai quoi du basepath dans ce cas ?????
-    public function map(string $pattern, RequestHandlerInterface $handler): Route
+    public function map(string $pattern, $handler): Route
     {
         //TODO : lever une exception si on redéclare une route (tester aussi en passant par le group si il est possible de redéclarer une route !!!!) : https://github.com/mastacontrola/AltoRouter/blob/master/AltoRouter.php#L328
 
