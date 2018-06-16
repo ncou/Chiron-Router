@@ -83,6 +83,7 @@ class Route //implements RequestHandlerInterface
      * @param $url string
      * @param $handler mixed
      */
+    // TODO : passer en paramétre aussi les middlewares, un truc comme __construct(...., $middlewares = [])
     public function __construct(string $url, $handler)
     {
         $this->url = $url;
