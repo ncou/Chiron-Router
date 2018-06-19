@@ -73,7 +73,8 @@ class Route //implements RequestHandlerInterface
         'h'  => '[0-9A-Fa-f]++',
         '*'  => '.+?',
         '**' => '.++',
-        ''   => '[^/\.]++',
+        //''   => '[^/\.]++',
+        ''   => '[^/]++',
     ];
 
     // TODO : on devrait pas plutot déporter cette variable dans la classe "Router" ????
