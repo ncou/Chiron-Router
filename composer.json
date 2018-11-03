@@ -17,7 +17,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Chiron\\Routing\\": "src/"
+            "Chiron\\Alto\\": "src/"
         }
     },
     "autoload-dev" : {

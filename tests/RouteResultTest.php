@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Chiron\Tests\Routing;
 
-use Chiron\Routing\Route;
-use Chiron\Routing\RouteResult;
+use Chiron\Alto\Route;
+use Chiron\Alto\RouteResult;
 use PHPUnit\Framework\TestCase;
 
 /**

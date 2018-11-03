@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Chiron\Routing;
+namespace Chiron\Alto;
 
 //https://docs.zendframework.com/zend-expressive/v2/cookbook/route-specific-pipeline/
 

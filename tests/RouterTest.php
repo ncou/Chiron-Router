@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Chiron\Tests\Routing;
 
-use Chiron\Routing\Route;
-use Chiron\Routing\Router;
+use Chiron\Alto\Route;
+use Chiron\Alto\Router;
 use Chiron\Tests\Utils\HandlerProxy2;
 use PHPUnit\Framework\TestCase;
 
@@ -21,10 +21,10 @@ class RouterTest extends TestCase
     }
 
     /** @test */
-    public function map_returns_a_route_object()
+    public function addRoute_returns_a_route_object()
     {
         $router = new Router();
-        $route = $router->map('/test/123', $this->noop)->method('GET');
+        $route = $router->addRoute('/test/123', $this->noop)->method('GET');
         $this->assertInstanceOf(Route::class, $route);
         $this->assertSame(['GET'], $route->getAllowedMethods());
         $this->assertSame('/test/123', $route->getUrl());
@@ -34,16 +34,16 @@ class RouterTest extends TestCase
     public function map_accepts_lowercase_verbs()
     {
         $router = new Router();
-        $route = $router->map('/test/123', $this->noop)->setAllowedMethods(['get', 'post', 'put', 'patch', 'delete', 'options']);
+        $route = $router->addRoute('/test/123', $this->noop)->setAllowedMethods(['get', 'post', 'put', 'patch', 'delete', 'options']);
         $this->assertSame(['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'], $route->getAllowedMethods());
     }
 
     /* @test */
     /*
-    public function map_removes_trailing_slash_from_uri()
+    public function addRoute_removes_trailing_slash_from_uri()
     {
         $router = new Router;
-        $route = $router->map('/test/123/', $this->noop)->method('GET');
+        $route = $router->addRoute('/test/123/', $this->noop)->method('GET');
         $this->assertInstanceOf(Route::class, $route);
         $this->assertSame(['GET'], $route->getAllowedMethods());
         $this->assertSame('/test/123', $route->getUrl());

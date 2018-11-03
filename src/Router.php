@@ -42,7 +42,7 @@ $routes->connect(
 
 */
 
-namespace Chiron\Routing;
+namespace Chiron\Alto;
 
 // TODO : utiliser un systéme de cache avec un serialize/unserialize pour charger les routes en cache : https://github.com/symfony/routing/blob/master/Route.php#L68
 // TODO : regarder ici pour gérer le cache : http://tech.zumba.com/2014/10/26/cakephp-caching-routes/
@@ -252,7 +252,7 @@ class Router
      * @return RouteInterface
      */
     // TODO : renommer cette méthode en "addRoute()" ???? et elle prendrait en paramétre directement un objet Route qui est initialisé ???? mais on ferai quoi du basepath dans ce cas ?????
-    public function map(string $pattern, $handler): Route
+    public function addRoute(string $pattern, $handler): Route
     {
         //TODO : lever une exception si on redéclare une route (tester aussi en passant par le group si il est possible de redéclarer une route !!!!) : https://github.com/mastacontrola/AltoRouter/blob/master/AltoRouter.php#L328
 

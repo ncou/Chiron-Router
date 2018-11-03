@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Chiron\Routing;
+namespace Chiron\Alto;
 
 // TODO : regarder ici : https://github.com/l0gicgate/Slim/blob/4.x-DispatcherResults/Slim/DispatcherResults.php
 
